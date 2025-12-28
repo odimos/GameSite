@@ -1,0 +1,116 @@
+body{
+    text-align: center;
+}
+
+.wrapper{
+    margin-top: 20px;
+    margin-left: 10px;
+    display: inline-block;
+    text-align: start;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: center; /* horizontal centering */
+ gap: 10px; 
+}
+
+#container{
+    width:300px;
+    min-width: 300px;
+    height:300px;
+    background-color: gray;
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.models{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* when wrapping will occur */
+@media (max-width: 700px){
+    .models{
+        flex-direction: row;
+    }
+}
+
+
+.model{
+    display: block;
+    width: 100px;
+    height:100px;
+    margin:0px 0px;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+.piece{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(236, 236, 236);
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 200ms linear;
+    background-image: url('img/pica.png');
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+    width: 98px;
+    height: 98px;
+
+}
+
+.piece:hover{
+    z-index: 10;
+    border-color: red;
+}
+
+.R{
+    transform: translateX(-100px);
+}
+
+.L{
+    transform: translateX(100px);
+}
+
+
+.U{
+    transform: translateY(100px);
+}
+
+
+.D{
+    transform: translateY(-100px);
+}
+
+.empty{
+    background-color: gray ;
+    z-index: 11;
+}
+
+.btn{
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(103, 93, 236);
+    color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(54, 39, 211);;
+}

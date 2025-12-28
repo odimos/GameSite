@@ -1,0 +1,38 @@
+ /* Container for the image and input */
+ .volume-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Add some space between the image and the input */
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#speaker {
+    width: 30px; /* Set the width of the speaker image */
+}
+
+#vol {
+    width: 200px; /* Set the width of the input range */
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameContainer{
+    border-radius: 5px;
+    max-width: 1200px;
+    max-height: 772px;
+    padding-top: 0;
+    margin: auto;
+    background-color: #27292A;
+}

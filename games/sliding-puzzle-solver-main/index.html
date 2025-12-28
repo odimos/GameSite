@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Puzzle</title>
+    <script src="gridmethods.js"></script>
+    <script src="puzzlemethods.js"></script>
+    <script src="solution.js"></script>
+    <script src="paint.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://odimosthenis.github.io/GitBar/gitbar.css">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: white;
+        }
+        .gitBar{
+            display: block;
+            background-image: linear-gradient(rgb(26, 30, 34), black);
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .gitBar > a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #gitRef{
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Click on a tile to slide it</h1>
+
+        <div class="grid">
+            <div id="container">
+    
+            </div>
+            <div class="models">
+                <img class="model" src="img/pica.png" >
+                <!-- <img class="model" src="img/squirtle.png" >
+                <img class="model" src="img/Jigglypuff.png" > -->
+            </div>
+        </div>
+       
+        <button class="btn" id="shuffle">shuffle</button>
+        <button class="btn" id="solve">AI Solve</button>
+    </div>
+
+    
+    
+</body>
+</html>

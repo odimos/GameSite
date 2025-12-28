@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+  <link rel="stylesheet" href="nav.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+
+    :root{
+      /* pale-ish dark background like you asked */
+      --bg: #27292A;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.65);
+      --stroke: rgba(255,255,255,0.12);
+    }
+
+    body{
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(255,255,255,0.09), transparent 60%),
+                  radial-gradient(900px 600px at 100% 0%, rgba(255,255,255,0.06), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    /* Allow vertical scroll, forbid horizontal scroll */
+    body {
+    overflow-x: hidden; /* no scrolling at all */
+      background-color: #27292A;
+    }
+
+  :root{
+    --nav-h: 56px;     /* navbar height */
+    --main-py: 3rem;   /* py-4 => 1.5rem * 2 */
+  }
+
+
+  /* height available for the game frame */
+  .game-frame{
+    --max-w: 1200px;
+    --rw: 14;
+    --rh: 9;
+
+    --avail-h: calc(100dvh - var(--nav-h) - var(--main-py));
+
+    max-height: var(--avail-h);
+
+    /* width is limited by BOTH max-w and the available height (converted to width via ratio) */
+    max-width: min(
+      var(--max-w),
+      calc(var(--avail-h) * var(--rw) / var(--rh))
+    );
+
+    width: 100%;
+    aspect-ratio: var(--rw) / var(--rh);
+
+    background:#000;
+    border-radius:12px;
+    overflow:hidden;
+    position:relative;
+  }
+    .game-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div id="site-nav"></div>
+    <script>
+        fetch('partials/nav.html')
+            .then(r => r.text())
+            .then(html => (document.getElementById('site-nav').innerHTML = html));
+    </script>
+
+  <!-- CONTENT -->
+  <main class="container-fluid py-4 d-flex justify-content-center">
+    <div class="game-frame" style="--max-w: 1200px; --rw: 14; --rh: 9;">
+      <iframe
+        src="/games/FootballHead/index.html"
+        allow="fullscreen"
+        scrolling="no"
+      ></iframe>
+    </div>
+  </main>
+
+</body>
+</html>

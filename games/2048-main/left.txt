@@ -1,0 +1,7 @@
+tween for new score
+
+image sizes of end and buttons ~ relative to the width, cause else problemos
+
+best scores different for different games config
+
+we could have the canMove just deactivate for some time with a setimeout

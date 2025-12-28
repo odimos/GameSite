@@ -1,0 +1,223 @@
+
+h6{
+    text-align: center;
+}
+
+
+#footer{
+    border-top: 2px solid black ;
+    margin-left: auto;
+    position: relative;
+    right: 0;
+}
+/* Bottom buttons */
+.bottom-buttons {
+    margin-left: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+} 
+
+
+
+/* Styling for the name input */
+#nameInput1, #nameInput2 {
+    height: 40px;  /* Adjust input height */
+    max-width: 300px; /* Adjust max width */
+    margin-left: 10px;
+    background-color: rgb(240, 240, 240);
+}
+
+#nameInput1::placeholder, #nameInput2::placeholder {
+    font-style: italic;
+    color: #aaa; /* Optional: Set a light color for better visibility */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+}
+
+/* Layout adjustments */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; 
+}
+
+.col-md-4,
+.col-md-8 {
+    flex: 1;
+}
+
+.col-md-4 {
+    image-rendering: pixelated;
+}
+
+/* Player sections */
+.player-section {
+    margin-bottom: 0px; /* Space between the player 1 and 2 sections */
+}
+
+.player-section h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Adjust Player 2's position to the far right */
+.player-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.col-md-6:last-child {
+    text-align: right;  /* Align Player 2's content to the right */
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .toggleContainer{
+    display: flex;
+    flex-direction: column;
+    color:aliceblue;
+  }
+
+  .toggleContainer > div{
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FF2930;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(46px);
+    -ms-transform: translateX(46px);
+    transform: translateX(46px);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

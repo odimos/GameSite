@@ -1,0 +1,167 @@
+:root{
+  /* pale-ish dark background like you asked */
+  --bg: #27292A;
+  --card: rgba(255,255,255,0.06);
+  --card2: rgba(255,255,255,0.10);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.65);
+  --stroke: rgba(255,255,255,0.12);
+}
+
+body{
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(255,255,255,0.09), transparent 60%),
+              radial-gradient(900px 600px at 100% 0%, rgba(255,255,255,0.06), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+/* Keep navbar as-is; just ensure page content looks good under it */
+.games-page{
+  max-width: 1100px;
+}
+
+.game-card{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, var(--card2), var(--card));
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.game-card:hover,
+.game-card:focus-visible{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 14px 44px rgba(0,0,0,0.33);
+  outline: none;
+}
+
+.game-media{
+  position: relative;
+  width: 100%;
+  background: rgba(0,0,0,0.20);
+}
+
+.game-media img,
+.game-media video{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Optional hover video preview */
+.game-media video.preview{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+    object-position: center bottom; /* crops bottom more */
+
+}
+
+.game-card:hover .game-media video.preview,
+.game-card:focus-visible .game-media video.preview{
+  opacity: 1;
+}
+
+/* Featured card */
+.game-card--featured .game-media{
+  aspect-ratio: 16 / 7;
+  min-height: 220px;
+}
+
+.game-info{
+  padding: 14px 16px;
+}
+
+.game-title{
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.1;
+  margin: 0 0 6px 0;
+}
+
+.game-subtitle{
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Center "Play" button, but whole card is clickable */
+.play-overlay{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.play-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transform: translateY(0);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.game-card--featured:hover .play-pill,
+.game-card--featured:focus-visible .play-pill{
+  transform: translateY(-2px);
+  background: rgba(0,0,0,0.45);
+  border-color: rgba(255,255,255,0.30);
+}
+
+/* Small cards grid: responsive wrap automatically */
+.game-grid{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* small card sizing */
+.game-card--small .game-media{
+  aspect-ratio: 16 / 10;
+  min-height: 140px;
+}
+
+.game-title-sm{
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.game-card--disabled{
+  opacity: 0.75;
+  cursor: default;
+  pointer-events: none;
+}
+
+.coming-soon{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 992px){
+  .game-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-card--featured .game-media{ aspect-ratio: 16 / 8; }
+}
+
+@media (max-width: 576px){
+  .games-page{ padding-left: 12px; padding-right: 12px; }
+  .game-grid{ grid-template-columns: 1fr; }
+  .game-card--featured .game-media{ aspect-ratio: 16 / 10; }
+}

@@ -1,0 +1,2 @@
+Chose image
+block shuffle and solve when already solving
