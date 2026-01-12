@@ -1,1 +1,1 @@
-[Live](https://odimos.github.io/GameSite/)
+[Live](https://odimos.github.io/OnlineGames/)
